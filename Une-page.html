@@ -4,13 +4,24 @@
     <meta charset="utf-8">
     <title>Une page web pour apprendre le JS</title>
     <script type="text/javascript" src="Un-script.js"></script>
+    <style>
+      code {
+        font-family: Consolas,"courier new";
+        color: white;
+        background-color: #000000;
+        background: black;
+        padding: 2px;
+        font-size: 105%;
+        margin: 1em 0 1em 1em;  /* haut | droit | bas | gauche */
+      }
+</style>
   </head>
   <body>
     <h1> Introduction </h1>
-    <p> Plutôt que de créer une nouvelle page par chapitre du livre A smart way to learn Javascript,
-      je vais regrouper certains les exercices, autant que faire se pourra. <br>
-      Ce site reprend les exercices et fait la promotion du livre: <br>
-      <a href="http://www.asmarterwaytolearn.com/index.html"
+    <p> Je regroupe ici certains exercices du livre 'A Smarter way to lean javascript'. <br>
+      Ce <a href="http://www.asmarterwaytolearn.com/index.html">site</a>
+       reprend les exercices et fait la promotion du livre: <br>
+      </p>
 
     <h1> 1.Les alertes avec alert("bla bla")</h1>
     <button name="Bouton alerte" onclick=alert"("C'est une alerte!")">Faire s afficher l alerte</button>
@@ -18,5 +29,48 @@
 
     <h1> 2 et 3. Les variables </h1>
     <button name="Bouton variables" onclick="mafonctionVariables()"> Appel de la fonction Variables </button>
+
+    <h1> 9 et 10 - la fonction prompt(question , réponse) suivie d'un test avec if </h1>
+    <button name="Lancer le script suivant" onclick="unPrompt()"> Lancer le script suivant:</button>
+    <p>
+      <code>
+        let question = "Votre espèce?"; <br>
+        let reponseParDefaut = "humaine"; <br>
+        let reponse = prompt(question, reponseParDefaut); <br>
+        </code>
+        Ce code est suivi par un test sur réponse et selon votre réponse un texte différent s'affiche.
+        </p>
+    <p>
+        <code>
+          let text; <br>
+          if ( reponse === "" ) { <br>
+          &nbsp &nbsp text = "Vous n'avez rien saisi."; <br>
+          } <br>
+          else if ( reponse === null ) { <br>
+            text = "Vous avez appuyé sur Annuler"; <br>
+          } <br>
+          else if ( reponse === reponseParDefaut){ <br>
+            text = "Votre réponse est celle proposée par défaut: "+ reponse; <br>
+          } <br>
+          else { <br>
+            text = "Vous avez saisi: "+ reponse+ ". Vous êtes un extra-terrestre mais bienvenu quand-même"; <br>
+          } <br>
+          </code>
+          L'auteur insiste sur le fait de mettre trois signes = lors des tests de comparaison. <br>
+          Le pourquoi viendra plus tard.
+      </p>
+    <p id="reponseDuPrompt">
+      Le texte selon votre réponse à la question apparaîtra ici.
+      </p>
+
+    <!--- <script> x
+      //function unPrompt {
+        //alert("exec");
+        //let question = "Votre espèce?";
+        //let reponseParDefaut = "humaine";
+        //let reponse = prompt(question, reponseParDefaut);
+    //  }
+    </script> --->
+
   </body>
 </html>
